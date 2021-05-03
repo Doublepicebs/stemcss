@@ -6,6 +6,10 @@
   padding: 1rem;
 }
 
+body  {
+  font-size: 1rem;
+}
+
 html {
   
   --border-radius: 12px;
