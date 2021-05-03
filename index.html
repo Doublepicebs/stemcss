@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stem CSS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="stem.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Georgia&family=Poppins&display=swap.header">
+  <style>
+    h1,h2,h3,h4,h5,h6,h7,button,.button{ font-family: "Poppins", sans-serif; } 
+    body { font-family: "Georgia", serif;
+  </style>
+  
+</head>
+
+<body class="container">
+  
+  
+  <h3><u style="text-decoration-style: wavy; text-decoration-color: #2979ff;">Stem CSS</u></h3>
+  <h6>A customisable css style inspired by skeleton and barebones.</h6>
+  <p>V3.5.21 Beta</p>
+  
+  <br><br><br>
+  
+  <section id="buttons">
+    <h4>Buttons</h4>
+    <p>There are two types of buttons: primary and regular.</p>
+    <button>
+      Regular
+    </button>
+    <button class="primary">
+      Primary
+    </button>
+    <pre><code>&lt;button class="primary"&gt;
+  Primary
+&lt;/button&gt;
+    
+&lt;button&gt;
+  Regular 
+&lt;/button&gt;</code></pre>
+    <h6>Theming & Variations</h6>
+    <p>
+    Check <a href="#theming">theming</a>.
+    </p>
+  </section>
+  
+  <br><hr><br>
+  
+  <section id="border-radius">
+    
+    <h4>Border Radius</h4>
+    
+    <p>Components are usually rounded. However you can toggle the border radius by <code>.rounded</code> and <code>.not-rounded</code> classes.</p>
+    
+    <p>You can change the default border radius of components by changing <code>--border-radius</code>.</p>
+    
+  </section>
+  
+  <br><hr><br>
+  
+  <section id="cards">
+    <h4>Cards</h4>
+    <p>You can create a regular card, or a primary card (by adding <code>primary</code> class). </p>
+    <div class="card">
+      Hello! This is a card! (<code>.card</code>)
+    </div>
+    <div class="card primary">
+      Hello! This is a card! (<code>.card.primary</code>)
+    </div>
+    
+    <h6>Theming & Variations</h6>
+    <p>
+      Check <a href="#theming">theming</a>.
+    </p>
+  </section>
+  
+  <br><hr><br>
+  
+  <section id="images">
+    <h4>Images</h4>
+    <p>For convieniency, images have no rounded borders by default, but you can let them have rounded borders by adding <code>.rounded</code> class.</p>
+    
+    <div>
+    <img src="https://images.pexels.com/photos/6619945/pexels-photo-6619945.jpeg?cs=srgb&dl=pexels-polina-kovaleva-6619945.jpg&fm=jpg" alt="img" height="200px">
+    <img src="https://images.pexels.com/photos/6619945/pexels-photo-6619945.jpeg?cs=srgb&dl=pexels-polina-kovaleva-6619945.jpg&fm=jpg" alt="" class="rounded" height="200px" style="float: right;">
+    </div>
+    
+  </section>
+  
+  <br><hr><br>
+  
+  <section id="quotes">
+    
+    <h4>Quotes</h4>
+    
+    <p>You can create a blockquote by using <code>.blockquote</code> or   <code>&lt;blockquote&gt;</code></p>
+    
+    <blockquote>
+      When you focus on the good, the good gets better.
+    </blockquote>
+    
+    <h6>Theming</h6>
+    <p>
+    Check <a href="#theming">theming</a>.
+    </p>  
+    
+  </section>
+  
+  <br /><hr /><br />
+  
+  
+  <section id="theming">
+    
+    <h4>Theming</h4>
+    <p>Stem css was built entirely on the idea of customisability.</p>
+    
+    <h5>1. Editing the theme</h5>
+    There are basic variables in stem:
+   <code>
+  <br /><br>
+  --theme-color <br> 
+    --anti-theme-color <br> <br />
+  --component-background-color <br>
+  --component-color <br /> <br />
+
+  --accent-hue <br />
+  --accent-saturation <br>
+  --accent-lightning <br />
+  --accent: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightning)) <br />
+
+  --accent-dim: hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightning) - 15%)); <br />
+
+  --accent-light: hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightning) + 15%)); <br /><br />
+
+  --text-color-on-accent <br />
+  </code>
+    
+    <br><br>
+    <p>Each one of the previous variables exists once in <code>html.light</code> and once in <code>html.dark</code>. These can be tweaked to change the theme entirely.</p>
+    
+    <br><br>
+    
+    <p>There aren't many other variables that aren't based on color:</p>
+    <br>
+    <code>
+      --border-radius
+    </code>
+    <br><br><br>
+    
+    <h5>2. Making a new variant of a component</h5>
+    <p>
+      
+      To create a new variant of a component, do the following:
+      <br><br>
+      A. Write the class of the variant
+      <pre><code>button.danger {    }</code></pre>
+      <br>
+      
+      B. Write the styles
+<pre><code>button.danger {
+  background-color: var(--danger-background);
+  padding: 1rem;
+}</code></pre>
+
+    <p>Note that <code>--danger-background</code> doesn't exist in stem css, so we add it in (3)</p>
+      
+    </p>
+    
+    <br><br><br>
+    
+    <h5>3. Creating new variables</h5>
+    <p>
+      We add a light version:
+<pre><code>html.light {
+...
+ --danger-background: #a62e2e;
+...
+}     
+</code></pre>
+  And then a dark version:
+<pre><code>html.dark {
+...
+ --danger-background: #ffa6a6;
+...
+}     
+</code></pre>
+  We can add only one version if it works for both dark and light:
+<pre><code>html {
+...
+ --danger-background: #a62e2e;
+ ...
+}     
+</code></pre>
+    </p>
+    
+    <br><br><br>
+    <h5>4. Changing individual components</h5>
+    <p>If you want to add a red botton or a green card once, you can use html <code>style=""</code> to edit variables for one specific item once.</p>
+    <button class="primary" style="--accent: hsl(100, 100%, 60%); --accent-dim: hsl(100, 100%, 40%); ">Hiiiii</button>
+    
+<pre>
+<code>
+&lt;button class="primary" style="--accent: hsl(100, 100%, 60%); --accent-dim: hsl(100, 100%, 40%);"> Hiiiii &lt;/button> 
+</code>
+</pre>
+
+  <p>WARNING: <code>--accent-hue</code>, <code>--accent-saturation</code> AND <code>--accent-lightning</code> WILL NOT WORK IN THIS CASE.</p>
+    
+  </section>
+  
+  <br><br><br><br>
+  
+  <section>
+    <h3>Planned</h3>
+    <ul>
+      <li>RTL support.</li>
+      <li>Better and more organized docs.</li>
+      <li>Textboxes, radio buttons and checkboxes.</li>
+    </ul>
+  </section>
+  
+  
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 1rem;
+}
+
+html {
+  
+  --border-radius: 12px;
+  line-height: 1.2rem;
+  background-color: var(--theme-color);
+  color: var(--anti-theme-color);
+  scroll-behavior: smooth;
+  
+}
+
+html, html.light {
+
+  --theme-color: white;
+  --component-background-color: #e0e0e0;
+  --component-color: black;
+  --anti-theme-color: black;
+
+  --accent-hue: 218;
+  --accent-saturation: 100%;
+  --accent-lightning: 58%;
+  --accent: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightning));
+
+  --accent-dim: hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightning) - 15%));
+
+  --accent-light: hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightning) + 15%));
+
+  --text-color-on-accent: white;
+
+}
+
+
+html.dark {
+
+  --theme-color: #1f1f1f;
+  --component-background-color: #2D2D2D;
+  --component-color: white;
+  --anti-theme-color: #EAEAEA;
+
+  --accent-hue: 218;
+  --accent-saturation: 58%;
+  --accent-lightning: 76%;
+  --accent: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightning));
+
+  --accent-dim: hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightning) - 15%));
+
+  --accent-light: hsl(var(--accent-hue), var(--accent-saturation), calc(var(--accent-lightning) + 15%));
+
+  --text-color-on-accent: black;
+
+}
+
+button,
+.button {
+
+  background-color: var(--component-background-color);
+  color: var(--component-color);
+  box-shadow: inset 0px 0px 0px 1.5px var(--anti-theme-color);
+  display: block;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  min-width: 100px;
+  min-height: 35px;
+  outline: none;
+  min-height: 25px;
+  margin-top: .5rem;
+  margin-bottom: 2.5rem;
+  transition: all .25s;
+
+}
+
+button.primary,
+.button.primary {
+  border: none;
+  box-shadow: none;
+  background-color: var(--accent);
+  color: var(--text-color-on-accent);
+
+}
+
+button:focus,
+button:hover,
+.button:focus,
+.button:hover {
+  font-weight: bolder;
+  box-shadow: none;
+}
+
+button.primary:hover,
+button.primary:focus,
+.button.primary:hover,
+.button.primary:focus {
+  background-color: var(--accent-dim);
+}
+
+a, .link {
+  color: var(--accent);
+  text-decoration-color: var(--accent-dim);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 3.4rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+  line-height: 1.25;
+  letter-spacing: -.1rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+  line-height: 1.35;
+  letter-spacing: -.08rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  letter-spacing: -.05rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* Larger than phablet */
+@media (min-width: 600px) {
+  h1 {
+    font-size: 5.0rem;
+  }
+
+  h2 {
+    font-size: 4.2rem;
+  }
+
+  h3 {
+    font-size: 3.6rem;
+  }
+
+  h4 {
+    font-size: 3.0rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  margin-top: 0;
+}
+
+.code-block, pre {
+  padding: .75rem;
+  width: 100%;
+  max-height: 800px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  background-color: var(--component-background-color);
+  color: var(--component-color);
+  border-radius: var(--border-radius);
+}
+
+.card {
+  padding: .75rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background-color: var(--component-background-color);
+  color: var(--component-color);
+  border-radius: var(--border-radius);
+}
+
+.card.primary {
+  background-color: var(--accent);
+  color: var(--text-color-on-accent);
+}
+
+.rounded {
+  border-radius: var(--border-radius);
+}
+
+.not-rounded {
+  border-radius: 0;
+}
+
+img {
+  object-fit: cover;
+  border-radius: 0;
+}
+
+blockquote, .blockquote {
+  border-style: solid;
+  border-color: var(--component-background-color);
+  border-left-color: var(--accent);
+  border-width: .085rem;
+  border-left-width: .5rem;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  font-style: italic;
+  line-height: 1.45rem;
+}
